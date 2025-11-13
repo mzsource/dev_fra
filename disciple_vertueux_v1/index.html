@@ -102,25 +102,39 @@
             </div>
         </section>
 
-        <!-- Filtro de Meses -->
-        <div class="month-filter" id="monthFilter"></div>
-
         <!-- Contenedor de Días -->
         <div id="days-container"></div>
     </div>
 
     <!-- PWA Install Prompt -->
-    <div class="install-prompt" id="installPrompt" style="display: none;">
-        <div class="install-prompt-icon">📱</div>
+    <div class="install-prompt" id="installPrompt" style="display: none; position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #c77b7b 0%, #7b7bc7 100%); color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; max-width: 350px; animation: slideUp 0.3s ease-out;">
+        <div class="install-prompt-icon" style="font-size: 2.5em; margin-bottom: 10px;">📱</div>
         <div class="install-prompt-text">
-            <div class="install-prompt-title">✨ Installez Disciple Vertueux!</div>
-            <div class="install-prompt-subtitle">Accédez à votre dévotionnel depuis n'importe où, même hors ligne</div>
+            <div class="install-prompt-title" style="font-size: 1.2em; font-weight: bold; margin-bottom: 8px;">✨ Installez Disciple Vertueux!</div>
+            <div class="install-prompt-subtitle" style="font-size: 0.9em; margin-bottom: 15px; opacity: 0.95;">Accédez à votre dévotionnel depuis n'importe où, même hors ligne</div>
         </div>
-        <div class="install-prompt-buttons">
-            <button class="install-btn primary" id="installBtn">Installer</button>
-            <button class="install-btn" id="dismissBtn">Plus tard</button>
+        <div class="install-prompt-buttons" style="display: flex; gap: 10px;">
+            <button class="install-btn primary" id="installBtn" style="flex: 1; padding: 10px; background: white; color: #c77b7b; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.2s;">Installer</button>
+            <button class="install-btn" id="dismissBtn" style="flex: 1; padding: 10px; background: rgba(255,255,255,0.2); color: white; border: 1px solid white; border-radius: 5px; cursor: pointer; transition: all 0.2s;">Plus tard</button>
         </div>
     </div>
+    
+    <style>
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .install-prompt-buttons button:hover {
+            transform: scale(1.05);
+        }
+    </style>
 
     <script src="js/script.js"></script>
     <script>
@@ -131,7 +145,16 @@
                 const dias = await response.json();
                 
                 const container = document.getElementById('days-container');
-                const monthFilter = document.getElementById('monthFilter');
+                
+                // Crear el contenedor del filtro de meses si no existe
+                let monthFilter = document.getElementById('monthFilter');
+                if (!monthFilter) {
+                    monthFilter = document.createElement('div');
+                    monthFilter.id = 'monthFilter';
+                    monthFilter.className = 'month-filter';
+                    monthFilter.style.cssText = 'position: sticky; top: 0; background-color: white; padding: 10px 15px; border-bottom: 2px solid #d4a5a5; z-index: 100; display: flex; gap: 10px; overflow-x: auto; overflow-y: hidden; white-space: nowrap; justify-content: flex-start; box-shadow: 0 2px 4px rgba(0,0,0,0.1); scroll-behavior: smooth;';
+                    container.parentNode.insertBefore(monthFilter, container);
+                }
                 
                 // Crear botón "Todos los meses"
                 const allButton = document.createElement('button');
@@ -354,24 +377,53 @@
         
         // Mostrar instrucciones de instalación manual
         function showInstallInstructions() {
-            const instructions = `
-🔧 INSTRUCTIONS D'INSTALLATION:
-
-📱 ANDROID:
-1. Ouvrez le navigateur (Chrome, Edge, etc.)
-2. Appuyez sur le menu (⋮) en la esquina superior derecha
-3. Sélectionnez "Instalar aplicación" o "Agregar a pantalla de inicio"
-4. Confirmez l'installation
-
-🍎 iOS:
-1. Ouvrez Safari
-2. Appuyez sur le bouton de compartir (↗️) en la parte inferior
-3. Faites défiler et selecciona "Agregar a la pantalla de inicio"
-4. Choisissez un nom y toca "Agregar"
-
-✨ ¡Votre app sera disponible en tu pantalla de inicio!
+            // Crear un modal con instrucciones más visibles
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 2000;';
+            
+            const content = document.createElement('div');
+            content.style.cssText = 'background: white; padding: 30px; border-radius: 15px; max-width: 500px; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3);';
+            
+            content.innerHTML = `
+                <h2 style="color: #c77b7b; margin-top: 0; text-align: center; font-size: 1.5em;">📱 Installer Disciple Vertueux</h2>
+                
+                <div style="margin: 20px 0;">
+                    <h3 style="color: #7b7bc7; margin-top: 20px; margin-bottom: 10px;">🤖 ANDROID:</h3>
+                    <ol style="margin: 10px 0; padding-left: 20px;">
+                        <li>Ouvrez le navigateur (Chrome, Edge, etc.)</li>
+                        <li>Appuyez sur le menu (⋮) en haut à droite</li>
+                        <li>Sélectionnez "Installer l'application" ou "Ajouter à l'écran d'accueil"</li>
+                        <li>Confirmez l'installation</li>
+                    </ol>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h3 style="color: #5ba588; margin-top: 20px; margin-bottom: 10px;">🍎 iOS (Safari):</h3>
+                    <ol style="margin: 10px 0; padding-left: 20px;">
+                        <li>Ouvrez Safari</li>
+                        <li>Appuyez sur le bouton de partage (↗️) en bas</li>
+                        <li>Faites défiler et sélectionnez "Ajouter à l'écran d'accueil"</li>
+                        <li>Choisissez un nom et appuyez sur "Ajouter"</li>
+                    </ol>
+                </div>
+                
+                <p style="text-align: center; color: #666; margin-top: 20px; font-size: 0.9em;">✨ Votre app sera disponible sur votre écran d'accueil et fonctionnera même hors ligne!</p>
+                
+                <button id="closeInstructionsBtn" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #c77b7b 0%, #7b7bc7 100%); color: white; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer; margin-top: 20px;">Fermer</button>
             `;
-            alert(instructions);
+            
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+            
+            document.getElementById('closeInstructionsBtn').addEventListener('click', () => {
+                modal.remove();
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
         }
         
         // Detectar si el app fue instalado

@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disciple Vertueux: 365 Objectifs de Dieu pour votre vie</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Un dévotionnel quotidien pour le disciple chrétien avec 365 objectifs de Dieu pour votre vie">
+    <meta name="theme-color" content="#a5c4a5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Disciple Vertueux">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#faf7f2">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-192x192.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Install Prompt Styles -->
+    <style>
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-sage), var(--accent-lavender));
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            gap: 15px;
+            z-index: 10000;
+            font-family: Georgia, serif;
+        }
+        
+        .install-prompt.show {
+            display: flex;
+        }
+        
+        .install-prompt-icon {
+            font-size: 1.5rem;
+        }
+        
+        .install-prompt-text {
+            flex: 1;
+        }
+        
+        .install-prompt-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .install-prompt-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .install-prompt-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .install-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .install-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .install-btn.primary {
+            background: rgba(255,255,255,0.9);
+            color: var(--accent-sage);
+        }
+        
+        .install-btn.primary:hover {
+            background: white;
+        }
+        
+        @media (max-width: 768px) {
+            .install-prompt {
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                padding: 12px 15px;
+            }
+            
+            .install-prompt-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ebook-container">
+        <!-- Portada -->
+        <section class="page cover-page">
+            <div class="cover-content">
+                <div class="cover-illustration">
+                    <img src="images/cover_illustration_new.png" alt="Mujer caminando con globos" class="cover-image">
+                </div>
+                <div class="cover-text">
+                    <h1 class="main-title">Disciple Vertueux</h1>
+                    <p class="subtitle">365 Propósitos de Dios para tu vida</p>
+                    <div class="cover-divider"></div>
+                    <p class="cover-description">Un dévotionnel quotidien pour le disciple chrétien</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction General -->
+        <section class="page intro-page" id="introduccion">
+            <div class="watercolor-accent corner-accent"></div>
+            <div class="page-content">
+                <h2 class="page-title">Introduction</h2>
+                <div class="intro-text">
+                    <p>Cher disciple en Christ,</p>
+                    <p>Este devocional ha sido creado especialmente para ti, mujer virtuosa que busca crecer en su relación con Dios cada día. A lo largo de 365 días, exploraremos juntas los propósitos divinos para tu vida, tu familia y tu llamado como mujer de fe.</p>
+                    <p>Cada página contiene una reflexión bíblica, un mensaje personal y espacio para tus propias anotaciones y oraciones. Que este tiempo diario contigo y con Dios fortalezca tu corazón y renueve tu espíritu.</p>
+                    <p class="blessing">Que Dios bendiga abundantemente tu caminar con Él.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Index de Navegación -->
+        <section class="page index-page" id="indice">
+            <div class="watercolor-accent corner-accent"></div>
+            <div class="page-content">
+                <h2 class="page-title">Index</h2>
+                
+                <div class="index-content">
+                    <div class="index-section">
+                        <h3 class="index-section-title">Pages Principales</h3>
+                        <div class="index-links">
+                            <a href="#introduccion" class="index-link">
+                                <span class="link-icon">📖</span>
+                                <span class="link-text">Introduction</span>
+                            </a>
+                            <a href="#enero-intro" class="index-link">
+                                <span class="link-icon">🌟</span>
+                                <span class="link-text">Janvier - Nouveaux Départs</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="index-section">
+                        <h3 class="index-section-title">Dévotionnels de Janvier</h3>
+                        <div class="index-days-grid">
+                            <a href="#dia-1" class="day-link day-1">
+                                <span class="day-number">1</span>
+                                <span class="day-date">1er janvier</span>
+                                <span class="day-theme">Nouveaux Départs</span>
+                            </a>
+                            <a href="#dia-2" class="day-link day-2">
+                                <span class="day-number">2</span>
+                                <span class="day-date">2 de enero</span>
+                                <span class="day-theme">Disciple Vertueux</span>
+                            </a>
+                            <a href="#dia-3" class="day-link day-3">
+                                <span class="day-number">3</span>
+                                <span class="day-date">3 de enero</span>
+                                <span class="day-theme">Mentor et Exemple</span>
+                            </a>
+                            <a href="#dia-4" class="day-link day-4">
+                                <span class="day-number">4</span>
+                                <span class="day-date">4 de enero</span>
+                                <span class="day-theme">Beauté Intérieure</span>
+                            </a>
+                            <a href="#dia-5" class="day-link day-5">
+                                <span class="day-number">5</span>
+                                <span class="day-date">5 de enero</span>
+                                <span class="day-theme">Édifier le Foyer</span>
+                            </a>
+                            <a href="#dia-6" class="day-link day-6">
+                                <span class="day-number">6</span>
+                                <span class="day-date">6 de enero</span>
+                                <span class="day-theme">Mariage Biblique</span>
+                            </a>
+                            <a href="#dia-7" class="day-link day-7">
+                                <span class="day-number">7</span>
+                                <span class="day-date">7 de enero</span>
+                                <span class="day-theme">Élever des Enfants</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="index-navigation">
+                        <div class="nav-buttons">
+                            <button onclick="scrollToTop()" class="nav-button">
+                                <span class="button-icon">⬆️</span>
+                                <span class="button-text">Aller au Début</span>
+                            </button>
+                            <button onclick="scrollToSection('enero-intro')" class="nav-button">
+                                <span class="button-icon">📅</span>
+                                <span class="button-text">Page de Janvier</span>
+                            </button>
+                            <button onclick="scrollToSection('dia-1')" class="nav-button">
+                                <span class="button-icon">📖</span>
+                                <span class="button-text">Premier Jour</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página Introductoria de Janvier -->
+        <section class="page month-intro-page" id="enero-intro">
+            <div class="watercolor-accent side-accent"></div>
+            <div class="page-content">
+                <h2 class="month-title">Janvier</h2>
+                <h3 class="month-subtitle">Nouveaux Départs en Cristo</h3>
+                
+                <div class="month-reflection">
+                    <p>"Por tanto, si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." - 2 Corintios 5:17</p>
+                </div>
+
+                <div class="personal-metrics">
+                    <div class="metric-section">
+                        <h4>Mes objectifs pour ce mois:</h4>
+                        <div class="lines-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-section">
+                        <h4>Ce que j'espère apprendre:</h4>
+                        <div class="lines-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-section">
+                        <h4>Ma prière pour janvier:</h4>
+                        <div class="lines-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Suivi des Habitudes -->
+                    <div class="habit-tracking">
+                        <h4>Mon Habitude du Mois</h4>
+                        
+                        <!-- Línea de Hábito 1 -->
+                        <div class="habit-line-container">
+                            <div class="habit-input-line">
+                                <input type="text" class="habit-text-input" placeholder="Écrivez votre habitude ici..." data-habit="1">
+                            </div>
+                            <div class="habit-calendar-line">
+                                <div class="day-mini" data-day="1" data-habit="1">1</div>
+                                <div class="day-mini" data-day="2" data-habit="1">2</div>
+                                <div class="day-mini" data-day="3" data-habit="1">3</div>
+                                <div class="day-mini" data-day="4" data-habit="1">4</div>
+                                <div class="day-mini" data-day="5" data-habit="1">5</div>
+                                <div class="day-mini" data-day="6" data-habit="1">6</div>
+                                <div class="day-mini" data-day="7" data-habit="1">7</div>
+                                <div class="day-mini" data-day="8" data-habit="1">8</div>
+                                <div class="day-mini" data-day="9" data-habit="1">9</div>
+                                <div class="day-mini" data-day="10" data-habit="1">10</div>
+                                <div class="day-mini" data-day="11" data-habit="1">11</div>
+                                <div class="day-mini" data-day="12" data-habit="1">12</div>
+                                <div class="day-mini" data-day="13" data-habit="1">13</div>
+                                <div class="day-mini" data-day="14" data-habit="1">14</div>
+                                <div class="day-mini" data-day="15" data-habit="1">15</div>
+                                <div class="day-mini" data-day="16" data-habit="1">16</div>
+                                <div class="day-mini" data-day="17" data-habit="1">17</div>
+                                <div class="day-mini" data-day="18" data-habit="1">18</div>
+                                <div class="day-mini" data-day="19" data-habit="1">19</div>
+                                <div class="day-mini" data-day="20" data-habit="1">20</div>
+                                <div class="day-mini" data-day="21" data-habit="1">21</div>
+                                <div class="day-mini" data-day="22" data-habit="1">22</div>
+                                <div class="day-mini" data-day="23" data-habit="1">23</div>
+                                <div class="day-mini" data-day="24" data-habit="1">24</div>
+                                <div class="day-mini" data-day="25" data-habit="1">25</div>
+                                <div class="day-mini" data-day="26" data-habit="1">26</div>
+                                <div class="day-mini" data-day="27" data-habit="1">27</div>
+                                <div class="day-mini" data-day="28" data-habit="1">28</div>
+                                <div class="day-mini" data-day="29" data-habit="1">29</div>
+                                <div class="day-mini" data-day="30" data-habit="1">30</div>
+                                <div class="day-mini" data-day="31" data-habit="1">31</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Línea de Hábito 2 -->
+                        <div class="habit-line-container">
+                            <div class="habit-input-line">
+                                <input type="text" class="habit-text-input" placeholder="Deuxième habitude (optionnel)..." data-habit="2">
+                            </div>
+                            <div class="habit-calendar-line">
+                                <div class="day-mini" data-day="1" data-habit="2">1</div>
+                                <div class="day-mini" data-day="2" data-habit="2">2</div>
+                                <div class="day-mini" data-day="3" data-habit="2">3</div>
+                                <div class="day-mini" data-day="4" data-habit="2">4</div>
+                                <div class="day-mini" data-day="5" data-habit="2">5</div>
+                                <div class="day-mini" data-day="6" data-habit="2">6</div>
+                                <div class="day-mini" data-day="7" data-habit="2">7</div>
+                                <div class="day-mini" data-day="8" data-habit="2">8</div>
+                                <div class="day-mini" data-day="9" data-habit="2">9</div>
+                                <div class="day-mini" data-day="10" data-habit="2">10</div>
+                                <div class="day-mini" data-day="11" data-habit="2">11</div>
+                                <div class="day-mini" data-day="12" data-habit="2">12</div>
+                                <div class="day-mini" data-day="13" data-habit="2">13</div>
+                                <div class="day-mini" data-day="14" data-habit="2">14</div>
+                                <div class="day-mini" data-day="15" data-habit="2">15</div>
+                                <div class="day-mini" data-day="16" data-habit="2">16</div>
+                                <div class="day-mini" data-day="17" data-habit="2">17</div>
+                                <div class="day-mini" data-day="18" data-habit="2">18</div>
+                                <div class="day-mini" data-day="19" data-habit="2">19</div>
+                                <div class="day-mini" data-day="20" data-habit="2">20</div>
+                                <div class="day-mini" data-day="21" data-habit="2">21</div>
+                                <div class="day-mini" data-day="22" data-habit="2">22</div>
+                                <div class="day-mini" data-day="23" data-habit="2">23</div>
+                                <div class="day-mini" data-day="24" data-habit="2">24</div>
+                                <div class="day-mini" data-day="25" data-habit="2">25</div>
+                                <div class="day-mini" data-day="26" data-habit="2">26</div>
+                                <div class="day-mini" data-day="27" data-habit="2">27</div>
+                                <div class="day-mini" data-day="28" data-habit="2">28</div>
+                                <div class="day-mini" data-day="29" data-habit="2">29</div>
+                                <div class="day-mini" data-day="30" data-habit="2">30</div>
+                                <div class="day-mini" data-day="31" data-habit="2">31</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Línea de Hábito 3 -->
+                        <div class="habit-line-container">
+                            <div class="habit-input-line">
+                                <input type="text" class="habit-text-input" placeholder="Troisième habitude (optionnel)..." data-habit="3">
+                            </div>
+                            <div class="habit-calendar-line">
+                                <div class="day-mini" data-day="1" data-habit="3">1</div>
+                                <div class="day-mini" data-day="2" data-habit="3">2</div>
+                                <div class="day-mini" data-day="3" data-habit="3">3</div>
+                                <div class="day-mini" data-day="4" data-habit="3">4</div>
+                                <div class="day-mini" data-day="5" data-habit="3">5</div>
+                                <div class="day-mini" data-day="6" data-habit="3">6</div>
+                                <div class="day-mini" data-day="7" data-habit="3">7</div>
+                                <div class="day-mini" data-day="8" data-habit="3">8</div>
+                                <div class="day-mini" data-day="9" data-habit="3">9</div>
+                                <div class="day-mini" data-day="10" data-habit="3">10</div>
+                                <div class="day-mini" data-day="11" data-habit="3">11</div>
+                                <div class="day-mini" data-day="12" data-habit="3">12</div>
+                                <div class="day-mini" data-day="13" data-habit="3">13</div>
+                                <div class="day-mini" data-day="14" data-habit="3">14</div>
+                                <div class="day-mini" data-day="15" data-habit="3">15</div>
+                                <div class="day-mini" data-day="16" data-habit="3">16</div>
+                                <div class="day-mini" data-day="17" data-habit="3">17</div>
+                                <div class="day-mini" data-day="18" data-habit="3">18</div>
+                                <div class="day-mini" data-day="19" data-habit="3">19</div>
+                                <div class="day-mini" data-day="20" data-habit="3">20</div>
+                                <div class="day-mini" data-day="21" data-habit="3">21</div>
+                                <div class="day-mini" data-day="22" data-habit="3">22</div>
+                                <div class="day-mini" data-day="23" data-habit="3">23</div>
+                                <div class="day-mini" data-day="24" data-habit="3">24</div>
+                                <div class="day-mini" data-day="25" data-habit="3">25</div>
+                                <div class="day-mini" data-day="26" data-habit="3">26</div>
+                                <div class="day-mini" data-day="27" data-habit="3">27</div>
+                                <div class="day-mini" data-day="28" data-habit="3">28</div>
+                                <div class="day-mini" data-day="29" data-habit="3">29</div>
+                                <div class="day-mini" data-day="30" data-habit="3">30</div>
+                                <div class="day-mini" data-day="31" data-habit="3">31</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Auto-évaluation des Qualités -->
+                    <div class="spiritual-assessment">
+                        <h4>Ma Croissance Spirituelle</h4>
+                        <div class="assessment-categories">
+                            <div class="category">
+                                <label>FOI</label>
+                                <div class="progress-bar">
+                                    <div class="progress-segments">
+                                        <div class="segment" data-value="1"></div>
+                                        <div class="segment" data-value="2"></div>
+                                        <div class="segment" data-value="3"></div>
+                                        <div class="segment" data-value="4"></div>
+                                        <div class="segment" data-value="5"></div>
+                                        <div class="segment" data-value="6"></div>
+                                        <div class="segment" data-value="7"></div>
+                                        <div class="segment" data-value="8"></div>
+                                        <div class="segment" data-value="9"></div>
+                                        <div class="segment" data-value="10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="category">
+                                <label>DISPONIBILITÉ</label>
+                                <div class="progress-bar">
+                                    <div class="progress-segments">
+                                        <div class="segment" data-value="1"></div>
+                                        <div class="segment" data-value="2"></div>
+                                        <div class="segment" data-value="3"></div>
+                                        <div class="segment" data-value="4"></div>
+                                        <div class="segment" data-value="5"></div>
+                                        <div class="segment" data-value="6"></div>
+                                        <div class="segment" data-value="7"></div>
+                                        <div class="segment" data-value="8"></div>
+                                        <div class="segment" data-value="9"></div>
+                                        <div class="segment" data-value="10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="category">
+                                <label>AMOUR DE SOI</label>
+                                <div class="progress-bar">
+                                    <div class="progress-segments">
+                                        <div class="segment" data-value="1"></div>
+                                        <div class="segment" data-value="2"></div>
+                                        <div class="segment" data-value="3"></div>
+                                        <div class="segment" data-value="4"></div>
+                                        <div class="segment" data-value="5"></div>
+                                        <div class="segment" data-value="6"></div>
+                                        <div class="segment" data-value="7"></div>
+                                        <div class="segment" data-value="8"></div>
+                                        <div class="segment" data-value="9"></div>
+                                        <div class="segment" data-value="10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="category">
+                                <label>ÉQUILIBRE ÉMOTIONNEL</label>
+                                <div class="progress-bar">
+                                    <div class="progress-segments">
+                                        <div class="segment" data-value="1"></div>
+                                        <div class="segment" data-value="2"></div>
+                                        <div class="segment" data-value="3"></div>
+                                        <div class="segment" data-value="4"></div>
+                                        <div class="segment" data-value="5"></div>
+                                        <div class="segment" data-value="6"></div>
+                                        <div class="segment" data-value="7"></div>
+                                        <div class="segment" data-value="8"></div>
+                                        <div class="segment" data-value="9"></div>
+                                        <div class="segment" data-value="10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Días 1-7 de Janvier -->
+        <section class="page daily-page" id="dia-1">
+            <div class="watercolor-accent corner-small"></div>
+            <div class="page-content">
+                <div class="left-column">
+                    <div class="bible-reading">
+                        <h4>Lecture Biblique:</h4>
+                        <div class="bible-text">
+                            "En el principio creó Dios los cielos y la tierra. Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas. Y dijo Dios: Sea la luz; y fue la luz. Y vio Dios que la luz era buena; y separó Dios la luz de las tinieblas. Y llamó Dios a la luz Día, y a las tinieblas llamó Noche. Y fue la tarde y la mañana un día."
+                        </div>
+                        <p class="bible-reference">Génesis 1:1-5</p>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>Message Personnel:</h4>
+                        <p>Querida hermana, así como Dios creó todas las cosas con propósito y orden, Él tiene un plan perfecto para tu vida. En este nuevo año, recuerda que eres su creación especial, formada con amor y destinada para grandes propósitos. Como mujer virtuosa, tienes el privilegio de reflejar su gloria en tu hogar, tu familia y tu comunidad.</p>
+                        <p>Dios te ha dado dones únicos para bendecir a otros. Tu sensibilidad, tu capacidad de nutrir y cuidar, tu intuición maternal - todo esto es parte del diseño divino. Hoy, al comenzar este año, entrega tus planes a Él y confía en que Él hará algo hermoso con tu vida.</p>
+                        <p>Como Eva fue la corona de la creación, tú también eres preciosa ante los ojos de Dios. Él te formó con sus propias manos y sopló en ti el aliento de vida. Cada día es una nueva oportunidad para caminar en los propósitos que Él ha preparado para ti desde antes de la fundación del mundo.</p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="date-square">
+                        <div class="day-number">1</div>
+                        <div class="day-date">1 de Janvier</div>
+                    </div>
+
+                    <div class="personal-notes">
+                        <h4>Mes Notes:</h4>
+                        <div class="notes-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="handwritten-note">
+                        <p>"Hoy elijo confiar en el plan perfecto de Dios para mi vida. Soy su obra maestra."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page daily-page" id="dia-2">
+            <div class="watercolor-accent corner-small"></div>
+            <div class="page-content">
+                <div class="left-column">
+                    <div class="bible-reading">
+                        <h4>Lecture Biblique:</h4>
+                        <div class="bible-text">
+                            "Mujer virtuosa, ¿quién la hallará? Porque su estima sobrepasa largamente a la de las piedras preciosas. El corazón de su marido está en ella confiado, y no carecerá de ganancias. Le da ella bien y no mal todos los días de su vida."
+                        </div>
+                        <p class="bible-reference">Proverbios 31:10-12</p>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>Message Personnel:</h4>
+                        <p>La mujer virtuosa de Proverbios 31 es nuestro modelo a seguir. Su valor sobrepasa al de las piedras preciosas porque su corazón está puesto en Dios. Como esposa, madre, administradora del hogar, ella entiende que su verdadero valor no viene de lo que hace, sino de quién es en Cristo.</p>
+                        <p>Hermana, tu valor no se mide por tu productividad o perfección, sino por tu corazón que busca a Dios. Cada acto de amor en tu hogar, cada palabra de aliento a tus hijos, cada gesto de cuidado hacia tu esposo, es precioso ante los ojos de Dios. Eres una mujer de valor incalculable.</p>
+                        <p>El texto nos dice que el corazón de su marido confía en ella. Esta confianza se construye día a día con pequeños actos de fidelidad, honestidad y amor. Cuando tu esposo sabe que puede contar contigo, que eres su compañera fiel en todas las circunstancias, estás viviendo el diseño de Dios para el matrimonio.</p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="date-square">
+                        <div class="day-number">2</div>
+                        <div class="day-date">2 de Janvier</div>
+                    </div>
+
+                    <div class="personal-notes">
+                        <h4>Mes Notes:</h4>
+                        <div class="notes-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="handwritten-note">
+                        <p>"Mi valor viene de Dios. Soy preciosa a sus ojos."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page daily-page" id="dia-3">
+            <div class="watercolor-accent corner-small"></div>
+            <div class="page-content">
+                <div class="left-column">
+                    <div class="bible-reading">
+                        <h4>Lecture Biblique:</h4>
+                        <div class="bible-text">
+                            "Las ancianas asimismo sean reverentes en su porte; no calumniadoras, no esclavas del vino, maestras del bien; que enseñen a las mujeres jóvenes a amar a sus maridos y a sus hijos, a ser prudentes, castas, cuidadosas de su casa, buenas, sujetas a sus maridos, para que la palabra de Dios no sea blasfemada."
+                        </div>
+                        <p class="bible-reference">Tito 2:3-5</p>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>Message Personnel:</h4>
+                        <p>Pablo instruye a las mujeres mayores a enseñar lo bueno a las más jóvenes. Esto nos muestra el hermoso diseño de Dios para la comunidad femenina: un ciclo de sabiduría, amor y enseñanza que pasa de generación en generación.</p>
+                        <p>Ya seas una mujer joven aprendiendo o una mujer madura enseñando, tienes un papel vital en este plan divino. Si eres joven, busca mentoras piadosas. Si eres mayor, comparte tu sabiduría con amor. Dios usa a las mujeres para edificar familias fuertes y comunidades sanas. Tu influencia femenina es un regalo de Dios al mundo.</p>
+                        <p>Este pasaje nos enseña que la madurez espiritual viene con responsabilidades. Las mujeres mayores deben ser ejemplos de reverencia, autocontrol y bondad. Su vida debe ser un testimonio que inspire a las más jóvenes a vivir vidas piadosas y centradas en la familia.</p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="date-square">
+                        <div class="day-number">3</div>
+                        <div class="day-date">3 de Janvier</div>
+                    </div>
+
+                    <div class="personal-notes">
+                        <h4>Mes Notes:</h4>
+                        <div class="notes-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="handwritten-note">
+                        <p>"Dios me usa para bendecir a otras mujeres con su amor."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page daily-page" id="dia-4">
+            <div class="watercolor-accent corner-small"></div>
+            <div class="page-content">
+                <div class="left-column">
+                    <div class="bible-reading">
+                        <h4>Lecture Biblique:</h4>
+                        <div class="bible-text">
+                            "Vuestro atavío no sea el externo de peinados ostentosos, de adornos de oro o de vestidos lujosos, sino el interno, el del corazón, en el incorruptible ornato de un espíritu afable y apacible, que es de grande estima delante de Dios."
+                        </div>
+                        <p class="bible-reference">1 Pedro 3:3-4</p>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>Message Personnel:</h4>
+                        <p>La verdadera belleza de una mujer no radica en su apariencia externa, sino en la belleza interior de un espíritu afable y apacible. Esto no significa que no debamos cuidar nuestro aspecto físico, sino que nuestra prioridad debe estar en cultivar un corazón hermoso delante de Dios.</p>
+                        <p>Hermana, cuando inviertes tiempo en oración, en la Palabra, en actos de bondad y en desarrollar el fruto del Espíritu, estás embelleciendo tu alma de una manera que trasciende el tiempo. Esta belleza interior se refleja en tu rostro, en tu sonrisa, en tu manera de tratar a otros. Es una belleza que nunca se desvanece.</p>
+                        <p>Un espíritu afable y apacible no significa ser pasiva o sin personalidad. Significa tener una fortaleza interior que viene de confiar en Dios, una paz que sobrepasa todo entendimiento y una gentileza que refleja el carácter de Cristo. Esta es la belleza que Dios valora más que cualquier adorno externo.</p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="date-square">
+                        <div class="day-number">4</div>
+                        <div class="day-date">4 de Janvier</div>
+                    </div>
+
+                    <div class="personal-notes">
+                        <h4>Mes Notes:</h4>
+                        <div class="notes-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="handwritten-note">
+                        <p>"Cultivo la belleza interior que agrada a Dios y bendice a otros."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page daily-page" id="dia-5">
+            <div class="watercolor-accent corner-small"></div>
+            <div class="page-content">
+                <div class="left-column">
+                    <div class="bible-reading">
+                        <h4>Lecture Biblique:</h4>
+                        <div class="bible-text">
+                            "La mujer sabia edifica su casa; mas la necia con sus manos la derriba."
+                        </div>
+                        <p class="bible-reference">Proverbios 14:1</p>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>Message Personnel:</h4>
+                        <p>"La mujer sabia edifica su casa; mas la necia con sus manos la derriba." Qué responsabilidad y qué privilegio tenemos como mujeres de edificar nuestros hogares. No se trata solo de la estructura física, sino del ambiente espiritual y emocional que creamos.</p>
+                        <p>Con nuestras palabras podemos traer paz o conflicto. Con nuestras acciones podemos sembrar amor o resentimiento. Con nuestras oraciones podemos invitar la presencia de Dios o permitir que la oscuridad entre. Cada día tienes la oportunidad de edificar tu hogar con sabiduría, amor y fe. Tu hogar puede ser un refugio de paz en este mundo turbulento.</p>
+                        <p>Edificar una casa requiere paciencia, planificación y trabajo constante. No se construye en un día, sino ladrillo a ladrillo, decisión a decisión. Cada acto de bondad, cada palabra de aliento, cada momento de oración es un ladrillo en la construcción de un hogar sólido y lleno del amor de Dios.</p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="date-square">
+                        <div class="day-number">5</div>
+                        <div class="day-date">5 de Janvier</div>
+                    </div>
+
+                    <div class="personal-notes">
+                        <h4>Mes Notes:</h4>
+                        <div class="notes-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="handwritten-note">
+                        <p>"J'édifie mon foyer avec sagesse et amour, pour la gloire de Dieu."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page daily-page" id="dia-6">
+            <div class="watercolor-accent corner-small"></div>
+            <div class="page-content">
+                <div class="left-column">
+                    <div class="bible-reading">
+                        <h4>Lecture Biblique:</h4>
+                        <div class="bible-text">
+                            "Las casadas estén sujetas a sus propios maridos, como al Señor; porque el marido es cabeza de la mujer, así como Cristo es cabeza de la iglesia, la cual es su cuerpo, y él es su Salvador. Así que, como la iglesia está sujeta a Cristo, así también las casadas lo estén a sus maridos en todo."
+                        </div>
+                        <p class="bible-reference">Efesios 5:22-24</p>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>Message Personnel:</h4>
+                        <p>El diseño de Dios para el matrimonio incluye roles complementarios que reflejan la relación entre Cristo y la iglesia. Como esposas, somos llamadas a respetar y apoyar a nuestros esposos, no desde una posición de inferioridad, sino desde la fortaleza de nuestro llamado divino.</p>
+                        <p>Hermana, tu sumisión no es debilidad; es una demostración de fe en el orden divino. Cuando honras a tu esposo, estás honrando a Dios. Cuando lo apoyas en su liderazgo, estás siendo parte del plan perfecto de Dios para la familia. Tu influencia amorosa y sabia puede ayudar a tu esposo a ser el hombre que Dios quiere que sea.</p>
+                        <p>Este pasaje debe entenderse en el contexto del amor sacrificial que Cristo tiene por la iglesia. Así como Cristo se entregó por nosotros, el esposo debe amar a su esposa de la misma manera. La sumisión bíblica es una respuesta a este amor, no una imposición. Es una danza hermosa de amor mutuo y respeto.</p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="date-square">
+                        <div class="day-number">6</div>
+                        <div class="day-date">6 de Janvier</div>
+                    </div>
+
+                    <div class="personal-notes">
+                        <h4>Mes Notes:</h4>
+                        <div class="notes-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="handwritten-note">
+                        <p>"Honro a Dios honrando y apoyando a mi esposo con amor."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page daily-page" id="dia-7">
+            <div class="watercolor-accent corner-small"></div>
+            <div class="page-content">
+                <div class="left-column">
+                    <div class="bible-reading">
+                        <h4>Lecture Biblique:</h4>
+                        <div class="bible-text">
+                            "Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él."
+                        </div>
+                        <p class="bible-reference">Proverbios 22:6</p>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>Message Personnel:</h4>
+                        <p>"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él." Como madres, tenemos el privilegio sagrado de formar las próximas generaciones. Nuestras palabras, nuestro ejemplo, nuestras oraciones, todo esto moldea el corazón de nuestros hijos.</p>
+                        <p>No subestimes el poder de tu influencia maternal. Cada historia bíblica que compartes, cada oración que haces con ellos, cada momento de disciplina amorosa, está sembrando semillas eternas en sus corazones. Dios te ha confiado estas preciosas vidas porque confía en tu corazón de madre. Eres colaboradora de Dios en la formación de sus hijos.</p>
+                        <p>Instruire n'est pas seulement enseigner des règles, mais modeler le caractère du Christ. Vos enfants apprennent plus de ce qu'ils voient en vous que de ce qu'ils entendent de vous. Votre relation avec Dieu, votre façon de traiter les autres, votre réponse aux difficultés - tout cela façonne leur compréhension de qui est Dieu et comment ils doivent vivre.</p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="date-square">
+                        <div class="day-number">7</div>
+                        <div class="day-date">7 de Janvier</div>
+                    </div>
+
+                    <div class="personal-notes">
+                        <h4>Mes Notes:</h4>
+                        <div class="notes-space">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="handwritten-note">
+                        <p>"Soy colaboradora de Dios en la formación de mis hijos para su gloria."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PWA Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <div class="install-prompt-icon">📱</div>
+        <div class="install-prompt-text">
+            <div class="install-prompt-title">¡Instala Disciple Vertueux!</div>
+            <div class="install-prompt-subtitle">Accede a tu devocional desde cualquier lugar</div>
+        </div>
+        <div class="install-prompt-buttons">
+            <button class="install-btn primary" id="installBtn">Installer</button>
+            <button class="install-btn" id="dismissBtn">Plus tard</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+    <!-- PWA Registration Script -->
+    <script>
+        // Registrar Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registrado: ', registration);
+                        
+                        // Verificar actualizaciones
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // Nueva versión disponible
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    })
+                    .catch((error) => {
+                        console.log('SW registro falló: ', error);
+                    });
+            });
+        }
+
+        // PWA Install Prompt
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installBtn = document.getElementById('installBtn');
+        const dismissBtn = document.getElementById('dismissBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevenir que Chrome 67 y anteriores muestren automáticamente el prompt
+            e.preventDefault();
+            // Guardar el evento para que pueda ser activado después
+            deferredPrompt = e;
+            // Mostrar nuestro prompt personalizado
+            showInstallPrompt();
+        });
+
+        function showInstallPrompt() {
+            installPrompt.classList.add('show');
+        }
+
+        function hideInstallPrompt() {
+            installPrompt.classList.remove('show');
+        }
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                // Mostrar el prompt de instalación
+                deferredPrompt.prompt();
+                // Esperar a que el usuario responda al prompt
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response to the install prompt: ${outcome}`);
+                // Limpiar deferredPrompt, ya que solo puede ser usado una vez
+                deferredPrompt = null;
+            }
+            hideInstallPrompt();
+        });
+
+        dismissBtn.addEventListener('click', () => {
+            hideInstallPrompt();
+            // Recordar que el usuario rechazó la instalación
+            localStorage.setItem('installPromptDismissed', Date.now());
+        });
+
+        // Verificar si ya fue rechazado recientemente
+        window.addEventListener('load', () => {
+            const dismissed = localStorage.getItem('installPromptDismissed');
+            if (dismissed) {
+                const dismissedTime = parseInt(dismissed);
+                const now = Date.now();
+                const dayInMs = 24 * 60 * 60 * 1000;
+                
+                // Si fue rechazado hace menos de 7 días, no mostrar
+                if (now - dismissedTime < 7 * dayInMs) {
+                    return;
+                }
+            }
+        });
+
+        // Detectar cuando la app fue instalada
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('PWA fue instalada');
+            hideInstallPrompt();
+            // Opcional: mostrar mensaje de bienvenida
+            showWelcomeMessage();
+        });
+
+        function showWelcomeMessage() {
+            // Crear notificación de bienvenida
+            const welcome = document.createElement('div');
+            welcome.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--accent-sage), var(--accent-lavender));
+                color: white;
+                padding: 15px 20px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 10001;
+                text-align: center;
+                font-family: Georgia, serif;
+                animation: slideDown 0.5s ease;
+            `;
+            welcome.innerHTML = `
+                <div style="font-weight: bold; margin-bottom: 5px;">Bienvenue! 🙏</div>
+                <div style="font-size: 0.9rem;">Disciple Vertueux se instaló correctamente</div>
+            `;
+            
+            document.body.appendChild(welcome);
+            
+            // Remover después de 3 segundos
+            setTimeout(() => {
+                welcome.style.animation = 'slideUp 0.5s ease';
+                setTimeout(() => welcome.remove(), 500);
+            }, 3000);
+        }
+
+        function showUpdateNotification() {
+            const update = document.createElement('div');
+            update.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--accent-rose), var(--accent-lavender));
+                color: white;
+                padding: 15px 20px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 10001;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                font-family: Georgia, serif;
+            `;
+            update.innerHTML = `
+                <div style="flex: 1;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">Nueva versión disponible</div>
+                    <div style="font-size: 0.9rem;">Actualiza para obtener las últimas mejoras</div>
+                </div>
+                <button onclick="location.reload()" style="
+                    background: rgba(255,255,255,0.9);
+                    color: var(--accent-rose);
+                    border: none;
+                    padding: 8px 15px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                ">Mettre à jour</button>
+            `;
+            
+            document.body.appendChild(update);
+        }
+
+        // Agregar estilos de animación
+        const animationStyles = document.createElement('style');
+        animationStyles.textContent = `
+            @keyframes slideDown {
+                from { transform: translateY(-100%); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            @keyframes slideUp {
+                from { transform: translateY(0); opacity: 1; }
+                to { transform: translateY(-100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(animationStyles);
+    </script>
+</body>
+</html>
+

@@ -110,11 +110,11 @@
     </div>
 
     <!-- PWA Install Prompt -->
-    <div class="install-prompt" id="installPrompt">
+    <div class="install-prompt" id="installPrompt" style="display: none;">
         <div class="install-prompt-icon">📱</div>
         <div class="install-prompt-text">
-            <div class="install-prompt-title">¡Instala Disciple Vertueux!</div>
-            <div class="install-prompt-subtitle">Accede a tu devocional desde cualquier lugar</div>
+            <div class="install-prompt-title">✨ Installez Disciple Vertueux!</div>
+            <div class="install-prompt-subtitle">Accédez à votre dévotionnel depuis n'importe où, même hors ligne</div>
         </div>
         <div class="install-prompt-buttons">
             <button class="install-btn primary" id="installBtn">Installer</button>
@@ -296,6 +296,89 @@
         
         // Cargar días cuando el DOM esté listo
         document.addEventListener('DOMContentLoaded', loadAndGenerateDays);
+        
+        // Registrar Service Worker para PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('✅ Service Worker registrado correctamente:', registration);
+                    })
+                    .catch(error => {
+                        console.error('❌ Error al registrar Service Worker:', error);
+                    });
+            });
+        }
+        
+        // Manejar el evento beforeinstallprompt para PWA
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            const installPrompt = document.getElementById('installPrompt');
+            if (installPrompt) {
+                installPrompt.style.display = 'flex';
+            }
+        });
+        
+        // Botón de instalación
+        const installBtn = document.getElementById('installBtn');
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log(`Usuario respondió: ${outcome}`);
+                    deferredPrompt = null;
+                    const installPrompt = document.getElementById('installPrompt');
+                    if (installPrompt) {
+                        installPrompt.style.display = 'none';
+                    }
+                } else {
+                    // Mostrar instrucciones manuales
+                    showInstallInstructions();
+                }
+            });
+        }
+        
+        // Botón de descartar
+        const dismissBtn = document.getElementById('dismissBtn');
+        if (dismissBtn) {
+            dismissBtn.addEventListener('click', () => {
+                const installPrompt = document.getElementById('installPrompt');
+                if (installPrompt) {
+                    installPrompt.style.display = 'none';
+                }
+            });
+        }
+        
+        // Mostrar instrucciones de instalación manual
+        function showInstallInstructions() {
+            const instructions = `
+🔧 INSTRUCTIONS D'INSTALLATION:
+
+📱 ANDROID:
+1. Ouvrez le navigateur (Chrome, Edge, etc.)
+2. Appuyez sur le menu (⋮) en la esquina superior derecha
+3. Sélectionnez "Instalar aplicación" o "Agregar a pantalla de inicio"
+4. Confirmez l'installation
+
+🍎 iOS:
+1. Ouvrez Safari
+2. Appuyez sur le bouton de compartir (↗️) en la parte inferior
+3. Faites défiler et selecciona "Agregar a la pantalla de inicio"
+4. Choisissez un nom y toca "Agregar"
+
+✨ ¡Votre app sera disponible en tu pantalla de inicio!
+            `;
+            alert(instructions);
+        }
+        
+        // Detectar si el app fue instalado
+        window.addEventListener('appinstalled', () => {
+            console.log('✅ PWA instalada exitosamente');
+            deferredPrompt = null;
+        });
     </script>
 </body>
 </html>

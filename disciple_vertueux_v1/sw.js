@@ -1,16 +1,25 @@
 // Service Worker pour Disciple Vertueux PWA
-const CACHE_NAME = 'disciple-vertueux-v1.0.0';
+const CACHE_NAME = 'disciple-vertueux-v1.0.1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/script.js',
-  '/manifest.json',
-  '/images/cover_illustration_new.png',
-  '/images/cover_illustration.png',
-  '/images/january_header.png',
-  '/images/daily_accent_1.png',
-  '/images/daily_accent_2.png',
+  './',
+  './index.html',
+  './css/styles.css',
+  './js/script.js',
+  './manifest.json',
+  './data/dias_365.json',
+  './images/cover_illustration_new.png',
+  './images/cover_illustration.png',
+  './images/january_header.png',
+  './images/daily_accent_1.png',
+  './images/daily_accent_2.png',
+  './icons/icon-72x72.png',
+  './icons/icon-96x96.png',
+  './icons/icon-128x128.png',
+  './icons/icon-144x144.png',
+  './icons/icon-152x152.png',
+  './icons/icon-192x192.png',
+  './icons/icon-384x384.png',
+  './icons/icon-512x512.png',
   'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap',
   'https://fonts.gstatic.com/s/dancingscript/v25/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSo3Sup8.woff2'
 ];
@@ -22,7 +31,11 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Service Worker: Mise en cache des fichiers');
-        return cache.addAll(urlsToCache);
+        return cache.addAll(urlsToCache).catch(err => {
+          console.warn('Service Worker: Algunos archivos no pudieron ser cacheados:', err);
+          // Continuar aunque algunos archivos fallen
+          return Promise.resolve();
+        });
       })
       .then(() => {
         console.log('Service Worker: Installation complète');
@@ -39,7 +52,7 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME) {
-            console.log('Service Worker: Suppression de l'ancien cache', cacheName);
+            console.log('Service Worker: Suppression de l\'ancien cache', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -83,7 +96,7 @@ self.addEventListener('fetch', event => {
       .catch(() => {
         // Si tout échoue, afficher la page hors ligne personnalisée
         if (event.request.destination === 'document') {
-          return caches.match('/index.html');
+          return caches.match('./index.html');
         }
       })
   );
@@ -99,9 +112,9 @@ self.addEventListener('message', event => {
 // Notificaciones push (para recordatorios diarios)
 self.addEventListener('push', event => {
   const options = {
-    body: event.data ? event.data.text() : 'C'est l'heure de votre dévotionnel quotidien 🙏',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/badge-72x72.png',
+    body: event.data ? event.data.text() : 'C\'est l\'heure de votre dévotionnel quotidien 🙏',
+    icon: './icons/icon-192x192.png',
+    badge: './icons/icon-72x72.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -111,12 +124,12 @@ self.addEventListener('push', event => {
       {
         action: 'explore',
         title: 'Lire Maintenant',
-        icon: '/icons/action-read.png'
+        icon: './icons/icon-192x192.png'
       },
       {
         action: 'close',
         title: 'Plus Tard',
-        icon: '/icons/action-close.png'
+        icon: './icons/icon-192x192.png'
       }
     ]
   };
@@ -133,7 +146,7 @@ self.addEventListener('notificationclick', event => {
   if (event.action === 'explore') {
     // Ouvrir l'application au jour actuel
     event.waitUntil(
-      clients.openWindow('/#dia-' + new Date().getDate())
+      clients.openWindow('./#dia-' + new Date().getDate())
     );
   } else if (event.action === 'close') {
     // Seulement fermer la notification
@@ -141,7 +154,7 @@ self.addEventListener('notificationclick', event => {
   } else {
     // Clic sur la notification principale
     event.waitUntil(
-      clients.openWindow('/')
+      clients.openWindow('./')
     );
   }
 });
@@ -157,16 +170,9 @@ function doBackgroundSync() {
   // Sincronizar datos del usuario (hábitos, anotaciones, etc.)
   return new Promise((resolve) => {
     console.log('Service Worker: Synchronisation en arrière-plan');
-    // Aquí se podría sincronizar con un servidor
     resolve();
   });
 }
 
-// Manejar actualizaciones de la app
-self.addEventListener('beforeinstallprompt', event => {
-  console.log('Service Worker: Invite d'installation disponible');
-});
-
 // Logging para debugging
 console.log('Service Worker: Chargé correctement');
-

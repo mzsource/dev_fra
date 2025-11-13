@@ -26,9 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar colores de fechas
     initializeDateColors();
     
-    // Inicializar filtro de meses
-    initializeMonthFilter();
-    
     // Animación suave para elementos al hacer scroll
     const observerOptions = {
         threshold: 0.1,
@@ -152,77 +149,7 @@ function initializeDateColors() {
     });
 }
 
-// Inicializar filtro de meses
-function initializeMonthFilter() {
-    // Crear contenedor del filtro si no existe
-    let filterContainer = document.getElementById('month-filter');
-    if (!filterContainer) {
-        filterContainer = document.createElement('div');
-        filterContainer.id = 'month-filter';
-        filterContainer.style.cssText = `
-            position: sticky;
-            top: 0;
-            background-color: white;
-            padding: 15px;
-            border-bottom: 2px solid #d4a5a5;
-            z-index: 100;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        `;
-        
-        // Crear botones para cada mes
-        const allButton = document.createElement('button');
-        allButton.textContent = 'Tous les mois';
-        allButton.className = 'month-button active';
-        allButton.style.cssText = `
-            padding: 8px 15px;
-            border: 2px solid #d4a5a5;
-            background-color: #d4a5a5;
-            color: white;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        `;
-        allButton.addEventListener('click', function() {
-            showAllDays();
-            updateActiveButton(this);
-        });
-        filterContainer.appendChild(allButton);
-        
-        for (let i = 1; i <= 12; i++) {
-            const button = document.createElement('button');
-            button.textContent = monthNames[i];
-            button.className = 'month-button';
-            button.dataset.month = i;
-            button.style.cssText = `
-                padding: 8px 15px;
-                border: 2px solid ${monthColors[i]};
-                background-color: ${monthColors[i]};
-                color: #333;
-                border-radius: 20px;
-                cursor: pointer;
-                font-size: 0.9rem;
-                transition: all 0.3s ease;
-            `;
-            button.addEventListener('click', function() {
-                filterDaysByMonth(i);
-                updateActiveButton(this);
-            });
-            filterContainer.appendChild(button);
-        }
-        
-        // Insertar el filtro al inicio del contenedor principal
-        const mainContainer = document.querySelector('.main-container');
-        if (mainContainer) {
-            mainContainer.insertBefore(filterContainer, mainContainer.firstChild);
-        } else {
-            document.body.insertBefore(filterContainer, document.body.firstChild);
-        }
-    }
-}
+
 
 // Mostrar todos los días
 function showAllDays() {

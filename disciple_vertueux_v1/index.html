@@ -182,7 +182,7 @@
 
                                 <div class="daily-message">
                                     <h4>Message Personnel:</h4>
-                                    <p>${dia.message}</p>
+                                    <p>${dia.message.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')}</p>
                                 </div>
                             </div>
 

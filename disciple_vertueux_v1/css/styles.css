@@ -15,16 +15,16 @@ body {
 
 /* Paleta de cores pastéis */
 :root {
-    --pastel-pink: #f8e8e8;
-    --pastel-lavender: #e8e8f8;
-    --pastel-mint: #e8f8f0;
-    --pastel-peach: #f8f0e8;
-    --pastel-blue: #e8f0f8;
+    --pastel-pink: #c77b7b;
+    --pastel-lavender: #7b7bc7;
+    --pastel-mint: #5ba588;
+    --pastel-peach: #c7995b;
+    --pastel-blue: #5b8fc7;
     --soft-gray: #5a5a5a;
-    --light-gray: #f5f5f5;
-    --accent-rose: #d4a5a5;
-    --accent-sage: #a5c4a5;
-    --accent-lavender: #b5a5d4;
+    --light-gray: #757575;
+    --accent-rose: #a05656;
+    --accent-sage: #5a8f5a;
+    --accent-lavender: #7b5ba0;
 }
 
 /* Container principal */

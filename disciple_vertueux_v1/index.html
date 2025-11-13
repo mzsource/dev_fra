@@ -20,14 +20,34 @@
             position: sticky;
             top: 0;
             background-color: white;
-            padding: 15px;
+            padding: 10px 15px;
             border-bottom: 2px solid #d4a5a5;
             z-index: 100;
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            justify-content: flex-start;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            scroll-behavior: smooth;
+        }
+        
+        .month-filter::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .month-filter::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .month-filter::-webkit-scrollbar-thumb {
+            background: #d4a5a5;
+            border-radius: 2px;
+        }
+        
+        .month-filter::-webkit-scrollbar-thumb:hover {
+            background: #c4959a;
         }
         
         .month-button {
@@ -39,6 +59,9 @@
             cursor: pointer;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            flex-shrink: 0;
+            white-space: nowrap;
+            font-family: Georgia, serif;
         }
         
         .month-button:hover {

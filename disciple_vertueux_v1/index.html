@@ -102,6 +102,9 @@
             </div>
         </section>
 
+        <!-- Filtro de Meses -->
+        <div class="month-filter" id="monthFilter"></div>
+
         <!-- Contenedor de Días -->
         <div id="days-container"></div>
     </div>
@@ -145,16 +148,10 @@
                 const dias = await response.json();
                 
                 const container = document.getElementById('days-container');
+                const monthFilter = document.getElementById('monthFilter');
                 
-                // Crear el contenedor del filtro de meses si no existe
-                let monthFilter = document.getElementById('monthFilter');
-                if (!monthFilter) {
-                    monthFilter = document.createElement('div');
-                    monthFilter.id = 'monthFilter';
-                    monthFilter.className = 'month-filter';
-                    monthFilter.style.cssText = 'position: sticky; top: 0; background-color: white; padding: 10px 15px; border-bottom: 2px solid #d4a5a5; z-index: 100; display: flex; gap: 10px; overflow-x: auto; overflow-y: hidden; white-space: nowrap; justify-content: flex-start; box-shadow: 0 2px 4px rgba(0,0,0,0.1); scroll-behavior: smooth;';
-                    container.parentNode.insertBefore(monthFilter, container);
-                }
+                // Limpiar el contenedor del filtro de meses
+                monthFilter.innerHTML = '';
                 
                 // Crear botón "Todos los meses"
                 const allButton = document.createElement('button');
